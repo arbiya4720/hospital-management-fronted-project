@@ -1,8 +1,74 @@
 "use client"
 import React from 'react'
 import "bootstrap/dist/js/bootstrap.bundle.js"
+import Link from 'next/link'
 
 const Navbar = () => {
+  const arr=[{
+    liclass:"nav-item px-2 fw-semibold",
+    linkclass:"nav-link",
+    href:"/",
+    name:'Home'
+
+  },
+  {
+    liclass:"nav-item px-2 fw-semibold",
+    linkclass:"nav-link",
+    href:"#",
+    name:'About'
+
+  },
+  {
+    liclass:"nav-item px-2 fw-semibold",
+    linkclass:"nav-link",
+    href:"#",
+    name:'Services'
+
+  },
+  {
+    liclass:"nav-item px-2 fw-semibold",
+    linkclass:"nav-link",
+    href:"#",
+    name:'Department'
+
+  },
+  {
+    liclass:"nav-item px-2 fw-semibold",
+    linkclass:"nav-link",
+    href:"#",
+    name:'Doctor'
+
+  },
+  {
+    liclass:"nav-item px-2 fw-semibold",
+    linkclass:"nav-link",
+    href:"#",
+    name:'Blog'
+
+  },
+  {
+    liclass:"nav-item px-2 fw-semibold",
+    linkclass:"nav-link",
+    href:"#",
+    name:'Contact'
+
+  },
+  {
+    liclass:"nav-item px-2 fw-semibold",
+    linkclass:"nav-link",
+    href:"/login",
+    name:'Login'
+
+  },
+  {
+    liclass:"nav-item px-2 fw-semibold",
+    linkclass:"nav-link",
+    href:"/register",
+    name:'Register'
+
+  }
+]
+
   return (
     <>
     <div className="row top">
@@ -39,41 +105,17 @@ const Navbar = () => {
     </button>
     <div className="collapse navbar-collapse" id="navbarNav">
       <ul className="navbar-nav mx-auto">
-        <li className="nav-item  px-2 fw-semibold">
-          <a className="nav-link " aria-current="page" href="#">
-            Home
-          </a>
-        </li>
-        <li className="nav-item  px-2 fw-semibold">
-          <a className="nav-link" href="#">
-            About
-          </a>
-        </li>
-        <li className="nav-item px-2 fw-semibold">
-          <a className="nav-link" href="#">
-            Services
-          </a>
-        </li>
-        <li className="nav-item px-2 fw-semibold">
-          <a className="nav-link" href="#">
-            Department
-          </a>
-        </li>
-        <li className="nav-item px-2 fw-semibold">
-          <a className="nav-link" href="#">
-            Doctor
-          </a>
-        </li>
-        <li className="nav-item px-2 fw-semibold ">
-          <a className="nav-link" href="#">
-            Blog
-          </a>
-        </li>
-        <li className="nav-item px-2 fw-semibold">
-          <a className="nav-link" href="#">
-            Contact
-          </a>
-        </li>
+        
+          {arr.map(((item)=>{
+             return(
+              <>
+              <li className={`${item.liclass}`}>
+             <Link className={`${item.linkclass}`} aria-current="page" href={`${item.href}`}>{item.name}</Link>
+
+              </li>
+              </>
+             )
+          }))}
       </ul>
     </div>
   </div>
